@@ -1,5 +1,7 @@
 # carbon-svelte-webpack
 
+[![Build][build]][build-badge]
+
 > Svelte + Webpack template for building apps with the [Carbon Design System](https://www.carbondesignsystem.com/)
 
 This template demonstrates a viable set-up for consuming [Carbon Components Svelte](https://github.com/IBM/carbon-components-svelte) in Svelte by including [Carbon Components Svelte](https://github.com/IBM/carbon-components-svelte), [Carbon Icons Svelte](https://github.com/IBM/carbon-icons-svelte) and [Carbon Components](https://github.com/carbon-design-system/carbon/tree/master/packages/components).
@@ -44,3 +46,6 @@ Builds the app for production. Compiled assets are outputted to `build/`.
 ## License
 
 [MIT](LICENSE)
+
+[build]: https://travis-ci.com/metonym/carbon-svelte-webpack.svg?branch=master
+[build-badge]: https://travis-ci.com/metonym/carbon-svelte-webpack
