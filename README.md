@@ -51,6 +51,8 @@ Deploys the `build/` folder to GitHub Pages using the [`gh-pages` module](https:
 
 ## Customization
 
+### Removing `gh-pages`
+
 If you are not using GitHub Pages, you can remove the dependency:
 
 ```bash
