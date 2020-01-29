@@ -4,7 +4,9 @@
 
 > Svelte + Webpack template for building apps with the [Carbon Design System](https://www.carbondesignsystem.com/)
 
-This template demonstrates a viable set-up for consuming [Carbon Components Svelte](https://github.com/IBM/carbon-components-svelte) in Svelte by including [Carbon Components Svelte](https://github.com/IBM/carbon-components-svelte), [Carbon Icons Svelte](https://github.com/IBM/carbon-icons-svelte) and [Carbon Components](https://github.com/carbon-design-system/carbon/tree/master/packages/components).
+This set-up includes [Carbon Components Svelte](https://github.com/IBM/carbon-components-svelte), [Carbon Icons Svelte](https://github.com/IBM/carbon-icons-svelte) and [Carbon Components](https://github.com/carbon-design-system/carbon/tree/master/packages/components).
+
+View the [deployed app](https://metonym.github.io/carbon-svelte-webpack/) on GitHub Pages.
 
 ## Getting Started
 
@@ -42,6 +44,29 @@ if (process.env.NODE_ENV === "development") {
 ### `yarn build`
 
 Builds the app for production. Compiled assets are outputted to `build/`.
+
+### `yarn deploy`
+
+Deploys the `build/` folder to GitHub Pages using the [`gh-pages` module](https://github.com/tschaub/gh-pages).
+
+## Customization
+
+If you are not using GitHub Pages, you can remove the dependency:
+
+```bash
+yarn remove gh-pages
+rm gh-pages.js
+```
+
+package.json:
+
+```diff
+"scripts": {
+  "start": "webpack-dev-server",
+  "build": "NODE_ENV=production webpack",
+- "deploy": "node gh-pages.js"
+}
+```
 
 ## License
 
