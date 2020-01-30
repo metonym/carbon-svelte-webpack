@@ -25,10 +25,7 @@ module.exports = {
     extensions: [".mjs", ".js", ".svelte"],
     mainFields: ["svelte", "browser", "module", "main"]
   },
-  output: {
-    path: paths.build,
-    filename: "[name].[chunkhash].js"
-  },
+  output: { path: paths.build, filename: "[name].[chunkhash].js" },
   module: {
     rules: [
       {
@@ -56,10 +53,7 @@ module.exports = {
           "sass-loader"
         ]
       },
-      {
-        test: /\.(png|jpe?g|svg)$/i,
-        use: [{ loader: "file-loader" }]
-      }
+      { test: /\.(png|jpe?g|svg)$/i, use: [{ loader: "file-loader" }] }
     ]
   },
   mode: NODE_ENV,

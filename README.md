@@ -55,6 +55,20 @@ Specify the port number using the `port` flag:
 yarn start --port 3000
 ```
 
+### Custom paths
+
+Edit the `paths` variable to use different source/build paths.
+
+```js
+// webpack.config.js
+const paths = {
+  entry: path.resolve(__dirname, "src/index.js"),
+  build: path.resolve(__dirname, "build"),
+  public: path.resolve(__dirname, "public"),
+  template: path.resolve(__dirname, "public/index.html")
+};
+```
+
 ### Removing `gh-pages`
 
 If you are not using GitHub Pages, you can remove the dependency:
