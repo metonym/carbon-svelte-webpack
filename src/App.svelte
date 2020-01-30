@@ -9,6 +9,8 @@
   } from "carbon-components-svelte";
   import Add16 from "carbon-icons-svelte/lib/Add16";
 
+  // Only executes in "development" mode
+  // Completely removed when building for production
   if (process.env.NODE_ENV === "development") {
     console.group("carbon-svelte-webpack");
     console.info("This message only appears in development.");
