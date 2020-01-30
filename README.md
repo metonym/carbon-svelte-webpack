@@ -8,6 +8,19 @@ This set-up includes [Carbon Components Svelte](https://github.com/IBM/carbon-co
 
 **View the [deployed app](https://metonym.github.io/carbon-svelte-webpack/) on GitHub Pages.**
 
+## Structure overview
+
+```js
+// carbon-svelte-webpack
+│
+└───public
+│   └──index.html // HTML template
+└───src
+    └──App.svelte // base svelte file
+    └──index.js // app entrypoint
+    └──style.scss // SASS file containing @includes from `carbon-components`
+```
+
 ## Getting Started
 
 Clone the repository and install its dependencies.
