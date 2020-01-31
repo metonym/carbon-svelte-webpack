@@ -10,7 +10,7 @@ This set-up includes [Carbon Components Svelte](https://github.com/IBM/carbon-co
 
 ## Structure overview
 
-```js
+```json
 // carbon-svelte-webpack
 │
 └───public
@@ -39,7 +39,7 @@ Runs the app in development mode. Visit [http://localhost:8080](http://localhost
 
 ### `yarn build`
 
-Builds the app for production. Compiled assets are outputted to `build/`.
+Builds the app for production; output folder is `build/`.
 
 ### `yarn deploy`
 
