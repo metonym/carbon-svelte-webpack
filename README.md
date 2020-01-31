@@ -10,7 +10,7 @@ This set-up includes [Carbon Components Svelte](https://github.com/IBM/carbon-co
 
 ## Structure overview
 
-```json
+```js
 // carbon-svelte-webpack
 │
 └───public
@@ -18,7 +18,7 @@ This set-up includes [Carbon Components Svelte](https://github.com/IBM/carbon-co
 └───src
     └──App.svelte // base svelte file
     └──index.js // app entrypoint
-    └──style.scss // SASS file containing @includes from `carbon-components`
+    └──style.scss // @includes from `carbon-components`
 ```
 
 ## Getting Started
