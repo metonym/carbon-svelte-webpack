@@ -1598,10 +1598,10 @@ carbon-components-svelte@^0.2.1:
     carbon-icons-svelte "^10.8.2"
     flatpickr "^4.6.3"
 
-carbon-components@^10.9.2:
-  version "10.9.2"
-  resolved "https://registry.npmjs.org/carbon-components/-/carbon-components-10.9.2.tgz#4046b95f2d9c8b46bf313e974917dfb70a87e408"
-  integrity sha512-2XXIQqCDqrJUsIKq4d3nJcwzbTBRB9LMKHMV5GCgSOTw06jfzo0hrHhgvGsG+oxqsdAAJAwcXMpSibbXtQJMJw==
+carbon-components@^10.9.3:
+  version "10.9.3"
+  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-10.9.3.tgz#d0d8f42c35fb7ce1cacc131d1c4b11fc2c905a6a"
+  integrity sha512-8TPIBjFIez2ymh3RmbHilel+/ReqpbfPf9IUBTOLtSdxI2VuyBWFxtBB/82xtHpUr3RfPdQ1U/rxDKYxoDOxrg==
   dependencies:
     carbon-icons "^7.0.7"
     flatpickr "4.6.1"
