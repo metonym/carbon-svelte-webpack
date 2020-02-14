@@ -18,7 +18,11 @@ const paths = {
 
 module.exports = {
   stats: "errors-only",
-  devtool: IS_PROD ? false : "cheap-eval-source-map",
+  devtool: IS_PROD
+    ? process.env.ENABLE_SOUCE_MAP === "true"
+      ? "source-map"
+      : false
+    : "cheap-eval-source-map",
   entry: { bundle: [paths.entry] },
   resolve: {
     alias: { svelte: path.resolve("node_modules", "svelte") },
