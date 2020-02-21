@@ -101,6 +101,15 @@
         <SelectItem value="three">Option 3</SelectItem>
       </Select>
       <div style="margin-top: 1rem;">Selected option: {selectedOption}</div>
+      <div>
+        <Button
+          kind="tertiary"
+          on:click={() => {
+            selectedOption = 'one';
+          }}>
+          Programmatically set option
+        </Button>
+      </div>
     </div>
   </div>
 </div>
