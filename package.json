@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
-    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-env": "^7.8.6",
     "autoprefixer": "^9.7.4",
     "carbon-components": "^10.9.3",
     "carbon-components-svelte": "^0.3.2",
