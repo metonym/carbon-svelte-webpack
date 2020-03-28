@@ -17,6 +17,7 @@ const paths = {
 };
 
 module.exports = {
+  mode: NODE_ENV,
   stats: "errors-only",
   devtool: IS_PROD
     ? process.env.ENABLE_SOUCE_MAP === "true"
@@ -60,31 +61,12 @@ module.exports = {
       { test: /\.(png|jpe?g|svg)$/i, use: [{ loader: "file-loader" }] }
     ]
   },
-  mode: NODE_ENV,
+
   plugins: [
     new CleanWebpackPlugin(),
     new CopyPlugin([{ from: paths.public }]),
     new MiniCssExtractPlugin({ filename: "[name].[chunkhash].css" }),
     new OptimizeCssAssetsPlugin({}),
-    new HtmlWebpackPlugin(
-      Object.assign(
-        {},
-        { inject: true, template: paths.template },
-        IS_PROD
-          ? {
-              minify: {
-                removeComments: true,
-                collapseWhitespace: true,
-                useShortDoctype: true,
-                removeEmptyElements: true,
-                removeEmptyAttributes: true,
-                removeStyleLinkTypeAttributes: true,
-                keepClosingSlash: true,
-                minifyURLs: true
-              }
-            }
-          : undefined
-      )
-    )
+    new HtmlWebpackPlugin({ template: paths.template })
   ]
 };
