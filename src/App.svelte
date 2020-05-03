@@ -19,7 +19,6 @@
 
   let size = "default";
   let toggle = false;
-
   let selectedOption = "two";
 </script>
 
@@ -53,6 +52,7 @@
             toggle = !toggle;
           }}>
           {toggle ? 'Hide' : 'Show'} grid lines
+          <Add16 fill="inherit" />
         </Button>
       </div>
     </div>
