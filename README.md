@@ -2,7 +2,7 @@
 
 [![Build][build]][build-badge]
 
-> Svelte + Webpack template for building apps with the [Carbon Design System](https://www.carbondesignsystem.com/)
+> Svelte + Webpack template for building apps with the [Carbon Design System](https://www.carbondesignsystem.com/) with SASS/autoprefixing support.
 
 This set-up includes [Carbon Components Svelte](https://github.com/IBM/carbon-components-svelte), [Carbon Icons Svelte](https://github.com/IBM/carbon-icons-svelte) and [Carbon Components](https://github.com/carbon-design-system/carbon/tree/master/packages/components).
 
@@ -11,7 +11,6 @@ This set-up includes [Carbon Components Svelte](https://github.com/IBM/carbon-co
 ## Structure overview
 
 ```js
-// carbon-svelte-webpack
 │
 └───public
 │   └──index.html // HTML template
@@ -23,11 +22,11 @@ This set-up includes [Carbon Components Svelte](https://github.com/IBM/carbon-co
 
 ## Getting Started
 
-Clone the repository and install its dependencies.
+Use [degit](https://github.com/Rich-Harris/degit) to quickly scaffold a new project:
 
 ```bash
-git clone git@github.com:metonym/carbon-svelte-webpack.git
-cd carbon-svelte-webpack
+npx degit metonym/carbon-svelte-webpack my-app
+cd my-app
 yarn install
 ```
 
@@ -65,7 +64,7 @@ const paths = {
   entry: path.resolve(__dirname, "src/index.js"),
   build: path.resolve(__dirname, "build"),
   public: path.resolve(__dirname, "public"),
-  template: path.resolve(__dirname, "public/index.html")
+  template: path.resolve(__dirname, "public/index.html"),
 };
 ```
 
