@@ -6,7 +6,7 @@
     "start": "webpack-dev-server",
     "build": "NODE_ENV=production webpack",
     "build:stats": "ENABLE_SOUCE_MAP=true NODE_ENV=production webpack && source-map-explorer build/*.js",
-    "deploy": "node gh-pages.js"
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.6",
