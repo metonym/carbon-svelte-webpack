@@ -83,7 +83,8 @@ package.json:
 "scripts": {
   "start": "webpack-dev-server",
   "build": "NODE_ENV=production webpack",
-- "deploy": "node gh-pages.js"
+  "build:stats": "ENABLE_SOUCE_MAP=true NODE_ENV=production webpack && source-map-explorer build/*.js",
+- "deploy": "gh-pages -d build"
 }
 ```
 
