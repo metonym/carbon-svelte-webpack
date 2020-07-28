@@ -13,12 +13,13 @@ const paths = {
   entry: path.resolve(__dirname, "src/index.js"),
   build: path.resolve(__dirname, "build"),
   public: path.resolve(__dirname, "public"),
-  template: path.resolve(__dirname, "public/index.html")
+  template: path.resolve(__dirname, "public/index.html"),
 };
 
 module.exports = {
   mode: NODE_ENV,
   stats: "errors-only",
+  devServer: { historyApiFallback: true },
   devtool: IS_PROD
     ? process.env.ENABLE_SOUCE_MAP === "true"
       ? "source-map"
@@ -28,17 +29,14 @@ module.exports = {
   resolve: {
     alias: { svelte: path.resolve("node_modules", "svelte") },
     extensions: [".mjs", ".js", ".svelte"],
-    mainFields: ["svelte", "browser", "module", "main"]
+    mainFields: ["svelte", "browser", "module", "main"],
   },
   output: { path: paths.build, filename: "[name].[chunkhash].js" },
   module: {
     rules: [
       {
         test: /\.svelte$/,
-        use: {
-          loader: "svelte-loader",
-          options: { emitCss: true, hotReload: true }
-        }
+        use: { loader: "svelte-loader", options: { hotReload: true } },
       },
       {
         test: [/\.s[ac]ss$/i, /\.css$/],
@@ -50,16 +48,16 @@ module.exports = {
             options: {
               plugins: [
                 AutoprefixerPlugin({
-                  overrideBrowserslist: ["last 1 version", "ie >= 11"]
-                })
-              ]
-            }
+                  overrideBrowserslist: ["last 1 version", "ie >= 11"],
+                }),
+              ],
+            },
           },
-          "sass-loader"
-        ]
+          "sass-loader",
+        ],
       },
-      { test: /\.(png|jpe?g|svg)$/i, use: [{ loader: "file-loader" }] }
-    ]
+      { test: /\.(png|jpe?g|svg)$/i, use: [{ loader: "file-loader" }] },
+    ],
   },
 
   plugins: [
@@ -67,6 +65,6 @@ module.exports = {
     new CopyPlugin([{ from: paths.public }]),
     new MiniCssExtractPlugin({ filename: "[name].[chunkhash].css" }),
     new OptimizeCssAssetsPlugin({}),
-    new HtmlWebpackPlugin({ template: paths.template })
-  ]
+    new HtmlWebpackPlugin({ template: paths.template }),
+  ],
 };
