@@ -1,12 +1,8 @@
 # carbon-svelte-webpack
 
-[![Build][build]][build-badge]
-
 > Svelte + Webpack template for building apps with the [Carbon Design System](https://www.carbondesignsystem.com/) with SASS/autoprefixing support.
 
-This set-up includes [Carbon Components Svelte](https://github.com/IBM/carbon-components-svelte), [Carbon Icons Svelte](https://github.com/IBM/carbon-icons-svelte) and [Carbon Components](https://github.com/carbon-design-system/carbon/tree/master/packages/components).
-
-**View the [deployed app](https://metonym.github.io/carbon-svelte-webpack/) on GitHub Pages.**
+This set-up includes [Carbon Components Svelte](https://github.com/IBM/carbon-components-svelte) and [Carbon Components](https://github.com/carbon-design-system/carbon/tree/master/packages/components).
 
 ## Structure overview
 
@@ -40,10 +36,6 @@ Runs the app in development mode. Visit [http://localhost:8080](http://localhost
 
 Builds the app for production; output folder is `build/`.
 
-### `yarn deploy`
-
-Deploys the `build/` folder to GitHub Pages using the [`gh-pages` module](https://github.com/tschaub/gh-pages).
-
 ## Customization
 
 ### Custom port
@@ -71,6 +63,3 @@ const paths = {
 ## License
 
 [MIT](LICENSE)
-
-[build]: https://travis-ci.com/metonym/carbon-svelte-webpack.svg?branch=master
-[build-badge]: https://travis-ci.com/metonym/carbon-svelte-webpack
