@@ -2,9 +2,23 @@
 
 > Svelte + Webpack template for building apps with the [Carbon Design System](https://www.carbondesignsystem.com/) with SASS/autoprefixing support.
 
-This set-up includes [Carbon Components Svelte](https://github.com/IBM/carbon-components-svelte) and [Carbon Components](https://github.com/carbon-design-system/carbon/tree/master/packages/components).
+This set-up includes [carbon-components-svelte](https://github.com/IBM/carbon-components-svelte) and [carbon-components](https://github.com/carbon-design-system/carbon/tree/master/packages/components).
 
-## Structure overview
+## Quick Start
+
+Use [degit](https://github.com/Rich-Harris/degit) to quickly scaffold a new project:
+
+```bash
+npx degit metonym/carbon-svelte-webpack my-app
+cd my-app
+yarn
+```
+
+## Overview
+
+SASS includes from carbon-components is located in [style.scss](src/style.scss).
+
+Place static assets (like favicons) in the [public](public) folder.
 
 ```js
 │
@@ -14,16 +28,6 @@ This set-up includes [Carbon Components Svelte](https://github.com/IBM/carbon-co
     └──App.svelte // base svelte file
     └──index.js // app entrypoint
     └──style.scss // @includes from `carbon-components`
-```
-
-## Getting Started
-
-Use [degit](https://github.com/Rich-Harris/degit) to quickly scaffold a new project:
-
-```bash
-npx degit metonym/carbon-svelte-webpack my-app
-cd my-app
-yarn install
 ```
 
 ## Available Scripts
@@ -38,7 +42,7 @@ Builds the app for production; output folder is `build/`.
 
 ## Customization
 
-### Custom port
+### Port
 
 Specify the port number using the `port` flag:
 
@@ -46,7 +50,7 @@ Specify the port number using the `port` flag:
 yarn start --port 3000
 ```
 
-### Custom paths
+### Paths
 
 Edit the `paths` variable to use different source/build paths.
 
