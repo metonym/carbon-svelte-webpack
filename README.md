@@ -68,26 +68,6 @@ const paths = {
 };
 ```
 
-### Removing `gh-pages`
-
-If you are not using GitHub Pages, you can remove the dependency:
-
-```bash
-yarn remove gh-pages
-rm gh-pages.js
-```
-
-package.json:
-
-```diff
-"scripts": {
-  "start": "webpack-dev-server",
-  "build": "NODE_ENV=production webpack",
-  "build:stats": "ENABLE_SOUCE_MAP=true NODE_ENV=production webpack && source-map-explorer build/*.js",
-- "deploy": "gh-pages -d build"
-}
-```
-
 ## License
 
 [MIT](LICENSE)

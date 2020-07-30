@@ -5,8 +5,7 @@
   "scripts": {
     "start": "webpack-dev-server",
     "build": "NODE_ENV=production webpack",
-    "build:stats": "ENABLE_SOUCE_MAP=true NODE_ENV=production webpack && source-map-explorer build/*.js",
-    "deploy": "gh-pages -d build"
+    "build:stats": "ENABLE_SOUCE_MAP=true NODE_ENV=production webpack && source-map-explorer build/*.js"
   },
   "devDependencies": {
     "autoprefixer": "^9.8.5",
@@ -16,7 +15,6 @@
     "copy-webpack-plugin": "^6.0.3",
     "css-loader": "^4.0.0",
     "file-loader": "^6.0.0",
-    "gh-pages": "^3.1.0",
     "html-webpack-plugin": "^4.3.0",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.14.1",
