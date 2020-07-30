@@ -59,10 +59,9 @@ module.exports = {
       { test: /\.(png|jpe?g|svg)$/i, use: [{ loader: "file-loader" }] },
     ],
   },
-
   plugins: [
     new CleanWebpackPlugin(),
-    new CopyPlugin([{ from: paths.public }]),
+    new CopyPlugin({ patterns: [{ from: paths.public }] }),
     new MiniCssExtractPlugin({ filename: "[name].[chunkhash].css" }),
     new OptimizeCssAssetsPlugin({}),
     new HtmlWebpackPlugin({ template: paths.template }),
