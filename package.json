@@ -9,24 +9,24 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.8.5",
-    "carbon-components": "~10.21.0",
-    "carbon-components-svelte": "^0.15.0",
+    "carbon-components": "^10.28.0",
+    "carbon-components-svelte": "^0.28.0",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^6.2.1",
     "css-loader": "^4.3.0",
-    "file-loader": "^6.1.1",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^4.5.0",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.14.1",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^9.0.2",
-    "source-map-explorer": "^2.5.0",
+    "source-map-explorer": "^2.5.2",
     "style-loader": "^1.2.1",
-    "svelte": "^3.29.0",
+    "svelte": "^3.32.3",
     "svelte-loader": "^2.13.6",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.2"
   }
 }
