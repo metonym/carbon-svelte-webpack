@@ -1,6 +1,6 @@
 # carbon-svelte-webpack
 
-> Svelte + Webpack template for building apps with the [Carbon Design System](https://www.carbondesignsystem.com/) with SASS/autoprefixing support.
+> Svelte + Webpack template for building apps with the [Carbon Design System](https://www.carbondesignsystem.com/) with SCSS.
 
 This set-up includes [carbon-components-svelte](https://github.com/IBM/carbon-components-svelte) and [carbon-components](https://github.com/carbon-design-system/carbon/tree/master/packages/components).
 
@@ -22,8 +22,6 @@ Place static assets (like favicons) in the [public](public) folder.
 
 ```js
 │
-└───public
-│   └──index.html // HTML template
 └───src
     └──App.svelte // base svelte file
     └──index.js // app entrypoint
@@ -32,37 +30,13 @@ Place static assets (like favicons) in the [public](public) folder.
 
 ## Available Scripts
 
-### `yarn start`
+### `yarn dev`
 
 Runs the app in development mode. Visit [http://localhost:8080](http://localhost:8080).
 
 ### `yarn build`
 
 Builds the app for production; output folder is `build/`.
-
-## Customization
-
-### Port
-
-Specify the port number using the `port` flag:
-
-```bash
-yarn start --port 3000
-```
-
-### Paths
-
-Edit the `paths` variable to use different source/build paths.
-
-```js
-// webpack.config.js
-const paths = {
-  entry: path.resolve(__dirname, "src/index.js"),
-  build: path.resolve(__dirname, "build"),
-  public: path.resolve(__dirname, "public"),
-  template: path.resolve(__dirname, "public/index.html"),
-};
-```
 
 ## License
 
