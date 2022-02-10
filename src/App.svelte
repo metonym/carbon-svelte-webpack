@@ -5,7 +5,7 @@
     RadioButtonGroup,
     RadioButton,
     Select,
-    SelectItem
+    SelectItem,
   } from "carbon-components-svelte";
   import Add16 from "carbon-icons-svelte/lib/Add16";
 
@@ -22,24 +22,6 @@
   let selectedOption = "two";
 </script>
 
-<style>
-  header {
-    margin-top: 2.5rem;
-  }
-
-  .grid-lines * {
-    outline: 1px solid rgba(0, 0, 0, 0.15);
-  }
-
-  .bx--row {
-    margin-bottom: 4rem;
-  }
-
-  .col--section {
-    margin-bottom: 2.5rem;
-  }
-</style>
-
 <div class="bx--grid" class:grid-lines={toggle}>
   <header class="bx--row">
     <div class="bx--col">
@@ -50,8 +32,9 @@
           size="small"
           on:click={() => {
             toggle = !toggle;
-          }}>
-          {toggle ? 'Hide' : 'Show'} grid lines
+          }}
+        >
+          {toggle ? "Hide" : "Show"} grid lines
           <Add16 fill="inherit" />
         </Button>
       </div>
@@ -88,7 +71,8 @@
           <RadioButtonGroup
             orientation="vertical"
             legend="Button Size (size)"
-            bind:selected={size}>
+            bind:selected={size}
+          >
             <RadioButton value="default" id="default" labelText="default" />
             <RadioButton value="field" id="field" labelText="field" />
             <RadioButton value="small" id="small" labelText="small" />
@@ -105,11 +89,30 @@
         <Button
           kind="tertiary"
           on:click={() => {
-            selectedOption = 'one';
-          }}>
+            selectedOption = "one";
+          }}
+        >
           Programmatically set option
         </Button>
       </div>
     </div>
   </div>
 </div>
+
+<style>
+  header {
+    margin-top: 2.5rem;
+  }
+
+  .grid-lines * {
+    outline: 1px solid rgba(0, 0, 0, 0.15);
+  }
+
+  .bx--row {
+    margin-bottom: 4rem;
+  }
+
+  .col--section {
+    margin-bottom: 2.5rem;
+  }
+</style>

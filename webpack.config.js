@@ -1,10 +1,9 @@
+const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const path = require("path");
-const CopyPlugin = require("copy-webpack-plugin");
 const AutoprefixerPlugin = require("autoprefixer");
+const { optimizeImports } = require("carbon-preprocess-svelte");
 
 const NODE_ENV = process.env.NODE_ENV || "development";
 const IS_PROD = NODE_ENV === "production";
@@ -13,18 +12,13 @@ const paths = {
   entry: path.resolve(__dirname, "src/index.js"),
   build: path.resolve(__dirname, "build"),
   public: path.resolve(__dirname, "public"),
-  template: path.resolve(__dirname, "public/index.html"),
 };
 
 module.exports = {
   mode: NODE_ENV,
   stats: "errors-only",
-  devServer: { historyApiFallback: true },
-  devtool: IS_PROD
-    ? process.env.ENABLE_SOUCE_MAP === "true"
-      ? "source-map"
-      : false
-    : "cheap-eval-source-map",
+  devServer: { hot: true, historyApiFallback: true },
+  devtool: IS_PROD ? false : "source-map",
   entry: { bundle: [paths.entry] },
   resolve: {
     alias: { svelte: path.resolve("node_modules", "svelte") },
@@ -36,7 +30,13 @@ module.exports = {
     rules: [
       {
         test: /\.svelte$/,
-        use: { loader: "svelte-loader", options: { hotReload: true } },
+        use: {
+          loader: "svelte-loader",
+          options: {
+            preprocess: [optimizeImports()],
+            hotReload: true,
+          },
+        },
       },
       {
         test: [/\.s[ac]ss$/i, /\.css$/],
@@ -46,11 +46,13 @@ module.exports = {
           {
             loader: "postcss-loader",
             options: {
-              plugins: [
-                AutoprefixerPlugin({
-                  overrideBrowserslist: ["last 1 version", "ie >= 11"],
-                }),
-              ],
+              postcssOptions: {
+                plugins: [
+                  AutoprefixerPlugin({
+                    overrideBrowserslist: ["last 1 version", "ie >= 11"],
+                  }),
+                ],
+              },
             },
           },
           "sass-loader",
@@ -61,9 +63,24 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new CopyPlugin({ patterns: [{ from: paths.public }] }),
-    new MiniCssExtractPlugin({ filename: "[name].[chunkhash].css" }),
-    new OptimizeCssAssetsPlugin({}),
-    new HtmlWebpackPlugin({ template: paths.template }),
+    new MiniCssExtractPlugin({
+      filename: IS_PROD ? "[name].[chunkhash].css" : "[name].css",
+    }),
+    // new OptimizeCssAssetsPlugin({}),
+    new HtmlWebpackPlugin({
+      templateContent: `
+        <!DOCTYPE html>
+        <html lang="en">
+          <head>
+            <meta charset="utf-8" />
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1, shrink-to-fit=no"
+            />
+          </head>
+          <body></body>
+        </html>
+      `,
+    }),
   ],
 };
