@@ -66,7 +66,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: IS_PROD ? "[name].[chunkhash].css" : "[name].css",
     }),
-    // new OptimizeCssAssetsPlugin({}),
     new HtmlWebpackPlugin({
       templateContent: `
         <!DOCTYPE html>
