@@ -7,7 +7,7 @@
     Select,
     SelectItem,
   } from "carbon-components-svelte";
-  import Add16 from "carbon-icons-svelte/lib/Add16";
+  import { Add } from "carbon-icons-svelte";
 
   // Only executes in "development" mode
   // Completely removed when building for production
@@ -35,7 +35,7 @@
           }}
         >
           {toggle ? "Hide" : "Show"} grid lines
-          <Add16 fill="inherit" />
+          <Add fill="inherit" />
         </Button>
       </div>
     </div>
