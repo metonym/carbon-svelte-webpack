@@ -84,7 +84,7 @@
         <SelectItem value="two">Option 2</SelectItem>
         <SelectItem value="three">Option 3</SelectItem>
       </Select>
-      <div style="margin-top: 1rem;">Selected option: {selectedOption}</div>
+      <div style="margin: 1rem 0;">Selected option: {selectedOption}</div>
       <div>
         <Button
           kind="tertiary"
