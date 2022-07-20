@@ -30,12 +30,12 @@
         <Button
           kind="tertiary"
           size="small"
+          icon={Add}
           on:click={() => {
             toggle = !toggle;
           }}
         >
           {toggle ? "Hide" : "Show"} grid lines
-          <Add fill="inherit" />
         </Button>
       </div>
     </div>

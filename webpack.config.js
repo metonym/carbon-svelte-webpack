@@ -34,7 +34,6 @@ module.exports = {
           loader: "svelte-loader",
           options: {
             preprocess: [optimizeImports()],
-            hotReload: true,
           },
         },
       },
