@@ -22,7 +22,6 @@ module.exports = {
   entry: { bundle: [paths.entry] },
   resolve: {
     extensions: [".mjs", ".js", ".svelte"],
-    mainFields: ["svelte", "browser", "module", "main"],
     conditionNames: ["svelte", "browser", "import"],
   },
   output: { path: paths.build, filename: "[name].[chunkhash].js" },
