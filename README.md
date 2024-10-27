@@ -11,7 +11,7 @@ Use [degit](https://github.com/Rich-Harris/degit) to quickly scaffold a new proj
 ```bash
 npx degit metonym/carbon-svelte-webpack my-app
 cd my-app
-yarn
+npm i
 ```
 
 ## Overview
@@ -30,11 +30,11 @@ Place static assets (like favicons) in the [public](public) folder.
 
 ## Available Scripts
 
-### `yarn dev`
+### `npm run dev`
 
 Runs the app in development mode. Visit [http://localhost:8080](http://localhost:8080).
 
-### `yarn build`
+### `npm run build`
 
 Builds the app for production; output folder is `build/`.
 
