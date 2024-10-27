@@ -21,9 +21,9 @@ module.exports = {
   devtool: IS_PROD ? false : "source-map",
   entry: { bundle: [paths.entry] },
   resolve: {
-    alias: { svelte: path.resolve("node_modules", "svelte") },
     extensions: [".mjs", ".js", ".svelte"],
     mainFields: ["svelte", "browser", "module", "main"],
+    conditionNames: ["svelte", "browser", "import"],
   },
   output: { path: paths.build, filename: "[name].[chunkhash].js" },
   module: {
